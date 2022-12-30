@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Holiday </h1>
+<div mat-dialog-content>
+  <form [formGroup]='userFormGroup'>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Firstname</mat-label>
+      <input matInput placeholder= "Firstname" formControlName="firstName" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Lastname</mat-label>
+      <input matInput placeholder= "Lastname" formControlName="lastName" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder= "Email" formControlName="email" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Telephone Number</mat-label>
+      <input matInput placeholder= "Tel" formControlName="tel" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Start Date</mat-label>
+      <input matInput placeholder= "YYYY-MM-DD" formControlName="date_deb" required type="date">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>End Date</mat-label>
+      <input matInput placeholder= "YYYY-MM-DD" formControlName="date_fin" required type="date">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button color="primary" [disabled]="this.userFormGroup.invalid" mat-button type="submit" *ngIf="data=='Add'" (click)="onSumbit()">Add</button>
+  <button color="primary" [disabled]="this.userFormGroup.invalid" mat-button type="submit" *ngIf="data!='Add'"(click)="onEdit()">Edit</button>
+
+</div>
+
